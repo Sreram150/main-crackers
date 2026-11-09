@@ -6,7 +6,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-only-insecure-key-change-me")
 DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = [
+    "sriram-crackers.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
+CORS_ALLOW_ORIGINS = [
+    "https://sriram-crackers.onrender.com",
+    "http://localhost:5173",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://sriram-crackers.onrender.com",
+    "https://sriram-crackers.vercel.app",]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
